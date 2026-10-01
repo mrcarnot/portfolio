@@ -1,0 +1,217 @@
+/* ===== Personal Portfolio II - external stylesheet (no JS, no frameworks) ===== */
+
+/* ---------- Base: consistent fonts, colors, spacing ---------- */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f0eb;
+    color: #2c2c2c;
+    font-family: 'Georgia', 'Palatino Linotype', serif;
+    line-height: 1.6;
+}
+
+/* Reusable clearfix: fixes the collapsed-parent problem caused by floats */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ---------- Navigation: links aligned horizontally with float ---------- */
+.navbar {
+    background-color: #333;
+    overflow: hidden;           /* contains the floated <li> items */
+}
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li {
+    float: left;                /* horizontal menu */
+}
+.nav-links a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 24px;
+    letter-spacing: 0.05em;
+    border-bottom: 3px solid transparent;
+}
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: #555;
+    border-bottom-color: #f5f0eb;
+}
+
+/* ---------- Page container and headings ---------- */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+.heading {
+    font-size: 2.2rem;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    margin: 0 0 50px 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.section { margin-bottom: 40px; }
+.section h2 {
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #888;
+    margin: 0 0 16px 0;
+}
+
+/* ---------- Home page: image floated left, poem floated right ---------- */
+.content { border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+.content .img {
+    float: left;
+    width: 50%;
+}
+.content .img img {
+    display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+}
+.content .poem {
+    float: right;
+    width: 50%;
+    min-height: 520px;
+    padding: 60px 40px;
+    background-color: #ede5dc;
+}
+.poem p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    max-width: 480px;
+    margin: 0;
+}
+footer {
+    clear: both;                /* footer always sits below any floats */
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Column layouts (hobbies, contact) using float ---------- */
+.col {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+}
+.col:last-child { margin-right: 0; }
+.col-3 {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+}
+.col-3:last-child { margin-right: 0; }
+
+/* Skills tags */
+.tags span {
+    display: inline-block;
+    padding: 8px 18px;
+    margin: 0 8px 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    font-size: 0.9rem;
+    background-color: #fff;
+}
+
+/* Hobbies */
+.list { padding-left: 18px; margin: 0 0 16px 0; }
+.list li { margin-bottom: 8px; }
+.currently { margin-top: 12px; }
+.currently span { display: block; }
+.label, .time {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #999;
+}
+
+/* Contact */
+.contact-list, .find-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li, .find-list li { margin-bottom: 18px; }
+.contact-list a {
+    color: #2c2c2c;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.contact-list a:hover { color: #777; }
+.contact-list span, .find-list span { display: block; }
+
+.form input,
+.form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #2c2c2c;
+    outline: none;
+    resize: none;
+}
+.form button {
+    padding: 12px 30px;
+    background: #2c2c2c;
+    color: #f5f0eb;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.form button:hover { background: #555; }
+
+/* ---------- Gallery: float + clear ---------- */
+.gallery-item {
+    float: left;
+    width: 31.33%;
+    margin: 0 3% 3% 0;
+    background-color: #fff;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.gallery-item:nth-child(3n) { margin-right: 0; }
+.gallery-item:nth-child(3n+1) { clear: left; }   /* each row starts on a new line */
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.gallery-item p {
+    margin: 8px 0 2px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #777;
+}
+
+/* ---------- Small screens (CSS only) ---------- */
+@media (max-width: 640px) {
+    .content .img, .content .poem,
+    .col, .col-3 { float: none; width: 100%; margin-right: 0; }
+    .content .img img { height: 300px; }
+    .gallery-item { width: 48%; margin-right: 4%; }
+    .gallery-item:nth-child(3n) { margin-right: 4%; }
+    .gallery-item:nth-child(3n+1) { clear: none; }
+    .gallery-item:nth-child(2n) { margin-right: 0; }
+    .gallery-item:nth-child(2n+1) { clear: left; }
+}
