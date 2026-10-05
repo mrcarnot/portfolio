@@ -215,3 +215,24 @@ footer {
     .gallery-item:nth-child(2n) { margin-right: 0; }
     .gallery-item:nth-child(2n+1) { clear: left; }
 }
+
+/* ---------- Home page introduction ---------- */
+.intro { margin: 50px auto; }
+.intro .heading { margin-bottom: 30px; }
+.intro-text {
+    float: left;
+    width: 100%;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    border-left: 4px solid #333;
+    padding-left: 24px;
+}
+.intro-text p { margin: 0 0 22px 0; }
+.intro-name {
+    font-style: normal;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
